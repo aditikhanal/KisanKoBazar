@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "740357769887",
+    "firebase_url": "https://kisan-ko-bazar.firebaseio.com",
+    "project_id": "kisan-ko-bazar",
+    "storage_bucket": "kisan-ko-bazar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740357769887:android:f5220e19dd1cf196c730aa",
+        "android_client_info": {
+          "package_name": "com.kisankobazar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740357769887-bh8gvnb4d9288fm3ubhbf5u9ka1drc7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN6t0BkclTEDT_s18g4rEfhGL2HN-VHso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740357769887-bh8gvnb4d9288fm3ubhbf5u9ka1drc7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
