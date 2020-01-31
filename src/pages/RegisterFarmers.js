@@ -135,7 +135,7 @@ export default class Intro extends Component {
   <Picker.Item label="Hectare(हेक्टर)" value="Hectare(हेक्टर)" />
 </Picker>
 </View>
-<Text style={styles.detail}>Enter the estimated production in your farm in tonns</Text>
+<Text style={styles.detail}>Enter the estimated production in your farm in tonnes</Text>
 <TextInput style={{backgroundColor:"#fff", width:150,height:40,marginLeft:40,marginTop:10,borderColor:"black",borderRadius:4,borderWidth:0.2}} placeholder="Production capacity"></TextInput>
           <Text style={styles.detail}>Select the crops in your farm</Text>
             <CheckBox containerStyle={{width:200,marginLeft:40}}

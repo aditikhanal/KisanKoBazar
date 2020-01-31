@@ -20,8 +20,16 @@ export default class Intro extends Component {
                      <Image source={require('../assets/img/rice.jpg')} style={styles.image} /> 
                      <Text style={styles.textTitle}>PADDY/धान </Text>
                     
-                    <Text style={styles.detail}>Land capacity: 2 bigha 
+                    <Text style={styles.detail}>Land capacity: 2 Bigha (बिघा)
+                    
                 </Text>
+                <Text style={styles.detail}>
+                    0.32 hectares
+                </Text>
+                <Text style={styles.detail}>
+                    Production capacity: 4 tonne
+                </Text>
+
                 
                     
 
@@ -65,13 +73,13 @@ const styles = StyleSheet.create({
     detail: {
         alignSelf: 'center',
         width: 296,
-        height: 88,
+        //height: 88,
         marginTop: 10,
         textAlign: 'center',
         fontSize: 16,
         fontWeight: '400',
         color: '#388E3C',
-        lineHeight: 20,
+        //lineHeight: 20,
         fontFamily:'ProximaNova-Regular'
 
     },

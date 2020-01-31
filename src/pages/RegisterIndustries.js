@@ -8,7 +8,8 @@ import {
     ScrollView,
     Dimensions,
     TextInput,
-    FlatList
+    FlatList,
+    Picker
 } from 'react-native'
 import firebase from '@react-native-firebase/app';
 import firestore from '@react-native-firebase/firestore';
@@ -117,6 +118,17 @@ export default class Intro extends Component {
                                     secureTextEntry={true}
                                     ></TextInput>
                     </View>
+                  
+                    <Text style={styles.detail}>Enter the crops intake in a season</Text>
+        <TextInput style={{backgroundColor:"#fff", width:100,height:40,marginLeft:40,marginTop:10,borderColor:"black",borderRadius:4,borderWidth:0.2}} placeholder="Metric tonnes"></TextInput>
+        <Text style={styles.detail}>Enter the minimum threshold frequency</Text>
+        <TextInput style={{backgroundColor:"#fff", width:150,height:40,marginLeft:40,marginTop:10,borderColor:"black",borderRadius:4,borderWidth:0.2}} placeholder="Tonnes"></TextInput>
+        
+    
+         
+  
+
+
                     
                                                     <Text style={styles.detail}>Select the crops required in your industry</Text>
                                     <CheckBox containerStyle={{width:200,marginLeft:40}}
@@ -237,10 +249,11 @@ const styles = StyleSheet.create({
         marginTop:30
     },
     detail: {
-        alignSelf: 'center',
-        width: 296,
+        //alignSelf: 'center',
+        //width: 296,
        // height: 88,
         marginTop: 10,
+        marginLeft:40,
         //textAlign: 'center',
         fontSize: 16,
         fontWeight: '400',
