@@ -119,9 +119,11 @@ export default class Intro extends Component {
                                     autoCapitalize="none"
                                     secureTextEntry={true}
                                     ></TextInput>
-          <Text style={styles.detail}>Select the land capacity of your farm</Text>
+          <Text style={styles.detail}>Enter the land capacity of your farm</Text>
         <View flexDirection="row">
-        <TextInput style={{backgroundColor:"#fff", width:100,marginLeft:40,borderColor:"black"}}></TextInput>
+        <TextInput style={{backgroundColor:"#fff", width:100,height:40,marginLeft:40,marginTop:10,borderColor:"black",borderRadius:4,borderWidth:0.2}} placeholder="Land capacity"></TextInput>
+        
+    
           <Picker
                   selectedValue={this.state.language}
                   style={{height: 50, width: 150}}
@@ -133,6 +135,8 @@ export default class Intro extends Component {
   <Picker.Item label="Hectare(हेक्टर)" value="Hectare(हेक्टर)" />
 </Picker>
 </View>
+<Text style={styles.detail}>Enter the estimated production in your farm in tonns</Text>
+<TextInput style={{backgroundColor:"#fff", width:150,height:40,marginLeft:40,marginTop:10,borderColor:"black",borderRadius:4,borderWidth:0.2}} placeholder="Production capacity"></TextInput>
           <Text style={styles.detail}>Select the crops in your farm</Text>
             <CheckBox containerStyle={{width:200,marginLeft:40}}
             checkedIcon='dot-circle-o'
@@ -255,7 +259,7 @@ const styles = StyleSheet.create({
         marginTop: 100
     },
     textTitle: {
-        alignSelf: 'center',
+        //alignSelf: 'center',
         color: '#434343',
         fontSize: 22,
         fontWeight: '700',
@@ -264,11 +268,12 @@ const styles = StyleSheet.create({
     },
     detail: {
         //alignSelf: 'center',
-        width: 296,
+        //width: 296,
        // height: 88,
+        marginLeft:40,
         marginTop: 10,
-        textAlign: 'center',
-        fontSize: 16,
+        //textAlign: 'center',
+        fontSize: 14,
         fontWeight: '400',
         color: 'black',
         lineHeight: 20,

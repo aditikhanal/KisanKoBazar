@@ -96,16 +96,16 @@ import {
   });
 
   const AppSwitchNavigator = createSwitchNavigator({
-    // Logo: { screen: Logo },
-    // Intro1:{screen:Intro1},
-    // Intro2:{screen:Intro2},
-    // Intro3:{screen:Intro3},
-    // cropinfo:{screen:cropinfo},
+    Logo: { screen: Logo },
+    Intro1:{screen:Intro1},
+    Intro2:{screen:Intro2},
+    Intro3:{screen:Intro3},
+    cropinfo:{screen:cropinfo},
     Register:{screen:Register},
-    // Login:{screen:Login},
-    // Dashboard:{screen:DashboardStackNavigator},
-    // Dashboard2:{screen:DashboardStackNavigator2},
-    // Dashboard3:{screen:DashboardStackNavigator3}
+    Login:{screen:Login},
+    Dashboard:{screen:DashboardStackNavigator},
+    Dashboard2:{screen:DashboardStackNavigator2},
+    Dashboard3:{screen:DashboardStackNavigator3}
 
     })
 
