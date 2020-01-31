@@ -20,7 +20,7 @@ class Todos extends React.Component {
           <TouchableOpacity onPress={() => this.props.navigation.navigate('cropinfo')}>
           <Image style={{marginTop:20,marginLeft:5, width:200,height:200}}source={ require('../assets/img/rice.jpg')} ></Image>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('juteinfo')}>
             
           <Image style={{marginTop:20,marginLeft:4, width:200,height:200}} source={require('../assets/img/jute.jpg')} ></Image>
           </TouchableOpacity>

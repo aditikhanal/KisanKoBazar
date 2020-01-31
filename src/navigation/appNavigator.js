@@ -12,6 +12,7 @@ import {
   import Login from "../pages/LoginFarmers.js"
   import bottomTabNavigator from './bottomNavigator'
   import cropinfo from "../pages/cropinfo.js"
+  import juteinfo from "../pages/juteinfo.js"
   import topTabNavigator from './topNavigator'
   import topTabNavigator2 from './topNavigator2'
   import { createStackNavigator } from 'react-navigation-stack';
@@ -101,6 +102,7 @@ import {
     Intro2:{screen:Intro2},
     Intro3:{screen:Intro3},
     cropinfo:{screen:cropinfo},
+    juteinfo:{screen:juteinfo},
     Register:{screen:Register},
     Login:{screen:Login},
     Dashboard:{screen:DashboardStackNavigator},
