@@ -16,19 +16,21 @@ export default class Intro extends Component {
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 style={styles.scrollView}>
-                <View>
-                    {/* <Image source={require('../images/emergency.png')} style={styles.image} /> */}
+                <View style={{}} >
+                     <Image source={require('../assets/img/rice.jpg')} style={styles.image} /> 
+                     <Text style={styles.textTitle}>PADDY/धान </Text>
                     
-                    <Text style={styles.detail}>  This is login screen
+                    <Text style={styles.detail}>Land capacity: 2 bigha 
                 </Text>
+                
                     
 
                     <TouchableOpacity style={styles.button}
-                        onPress={() => this.props.navigation.navigate('Farmers')}>
+                        onPress={() => this.props.navigation.navigate('Upload')}>
                         
 
                         <Text style={styles.buttonText}>
-                            NEXT
+                            Go back
                     </Text>
                     </TouchableOpacity>
                 
@@ -44,6 +46,7 @@ const styles = StyleSheet.create({
     scrollView: {
    // backgroundColor: '#00B0F2',
     height: ScreenHeight,
+    backgroundColor: '#C8E6C9'
   },
     image: {
         width: 258,
@@ -67,8 +70,21 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 16,
         fontWeight: '400',
-        color: '#767676',
+        color: '#388E3C',
         lineHeight: 20,
+        fontFamily:'ProximaNova-Regular'
+
+    },
+    detail2: {
+        alignSelf: 'center',
+        width: 296,
+        height: 88,
+        marginTop: -20,
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: '400',
+        color: '#388E3C',
+        //lineHeight: 20,
         fontFamily:'ProximaNova-Regular'
 
     },
@@ -81,8 +97,8 @@ const styles = StyleSheet.create({
 
     },
     button: {
-        backgroundColor: '#00b0f2',
-        width: 335,
+        backgroundColor: '#388E3C',
+        width: 235,
         height: 56,
         alignSelf: 'center',
         alignItems: "center",

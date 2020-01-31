@@ -9,30 +9,31 @@ import {
     Dimensions
 } from 'react-native'
 
-export default class Intro3 extends Component {
+export default class Intro extends Component {
 
     render() {
         return (
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 style={styles.scrollView}>
-                <View>
-                    {/* <Image source={require('../images/emergency.png')} style={styles.image} /> */}
+                <View style={{}} >
+                     <Image source={require('../assets/img/intro3.png')} style={styles.image} /> 
                     
-                    <Text style={styles.detail}> 
-                    kisan ko bazar intro3
+                    <Text style={styles.detail}>Brightening up farmer's home
+                </Text>
+                <Text style={styles.detail2}>किसानको घर दैलोमा उज्यालो छर्दै
                 </Text>
                     
 
                     <TouchableOpacity style={styles.button}
-                        onPress={() => this.props.navigation.navigate('Register')}>
+                        onPress={() => this.props.navigation.navigate('Dashboard2')}>
                         
 
                         <Text style={styles.buttonText}>
-                            Get Started
+                        NEXT/अगाडि
                     </Text>
                     </TouchableOpacity>
-                    
+                
                 </View>
             </ScrollView>
         )
@@ -45,10 +46,11 @@ const styles = StyleSheet.create({
     scrollView: {
    // backgroundColor: '#00B0F2',
     height: ScreenHeight,
+    backgroundColor: '#C8E6C9'
   },
     image: {
-        width: 258,
-        height: 258,
+        width: 265,
+        height: 265,
         alignSelf: 'center',
         marginTop: 100
     },
@@ -63,13 +65,26 @@ const styles = StyleSheet.create({
     detail: {
         alignSelf: 'center',
         width: 296,
-        height: 88,
+        //height: 88,
         marginTop: 10,
         textAlign: 'center',
         fontSize: 16,
         fontWeight: '400',
-        color: '#767676',
+        color: '#388E3C',
         lineHeight: 20,
+        fontFamily:'ProximaNova-Regular'
+
+    },
+    detail2: {
+        alignSelf: 'center',
+        width: 296,
+        height: 88,
+        marginTop: 5,
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: '400',
+        color: '#388E3C',
+        //lineHeight: 20,
         fontFamily:'ProximaNova-Regular'
 
     },
@@ -82,8 +97,8 @@ const styles = StyleSheet.create({
 
     },
     button: {
-        backgroundColor: '#00b0f2',
-        width: 335,
+        backgroundColor: '#388E3C',
+        width: 235,
         height: 56,
         alignSelf: 'center',
         alignItems: "center",

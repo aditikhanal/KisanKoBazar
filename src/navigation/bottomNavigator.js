@@ -15,7 +15,7 @@ const bottomTabNavigator = createBottomTabNavigator({
         tabBarLabel: 'Farmers',
         tabBarIcon: ({ tintColor }) => (
           <View>
-            {/* <Image source={require('../images/footer_home.png')} style={{ tintColor: tintColor, height: 20, width: 20, marginRight: 5 }} /> */}
+            <Image source={require('../assets/img/farmers.png')} style={{ tintColor: tintColor, height: 25, width: 25, marginRight: 5 }} />
           </View>
         )
       }
@@ -26,7 +26,7 @@ const bottomTabNavigator = createBottomTabNavigator({
         tabBarLabel: 'Industries',
         tabBarIcon: ({ tintColor }) => (
           <View>
-            {/* <Image source={require('../images/footer_emergency.png')} style={{ tintColor: tintColor, height: 20, width: 20, marginRight: 5 }} /> */}
+             <Image source={require('../assets/img/industry.png')} style={{ tintColor: tintColor, height: 25, width: 25, marginRight: 5 }} />
           </View>
         )
       }
@@ -34,10 +34,10 @@ const bottomTabNavigator = createBottomTabNavigator({
 Upload: {
       screen: Upload,
       navigationOptions: {
-        tabBarLabel: 'Upload',
+        tabBarLabel: 'My farm',
         tabBarIcon: ({ tintColor }) => (
           <View>
-            {/* <Image source={require('../images/footer_support.png')} style={{ tintColor: tintColor, height: 25, width: 25, marginRight: 5 }} /> */}
+             <Image source={require('../assets/img/upload.png')} style={{ tintColor: tintColor, height: 25, width: 25, marginRight: 5 }} /> 
           </View>
         )
       }

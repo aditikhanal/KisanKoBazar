@@ -6,35 +6,81 @@ import {
     Image,
     TouchableOpacity,
     ScrollView,
-    Dimensions
+    Dimensions,
+    FlatList
 } from 'react-native'
+import Load from './Load';
+import firebase from '@react-native-firebase/app';
+import firestore from '@react-native-firebase/firestore';
+
 
 export default class Intro2 extends Component {
+    updateTextInput(value) {
+        this.setState({ textInput: value });
+    }
+    addTodo() {
+        this.ref.add({
+          title: this.state.textInput,
+          
+          complete: false,
+        });
+      
+        this.setState({
+          textInput: '',
+          
+        });
+      }
+      state = {
+        textInput: '',
+        
+    };
+    
+    constructor() {
+        super();
+        this.ref = firebase.firestore().collection('todos');
+        this.unsubscribe = null;
+    
+        this.state = {
+            textInput: '',
+            loading: true,
+            todos: [],
+        };
+    }
+    componentDidMount() {
+        this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate) 
+    }
+    
+    componentWillUnmount() {
+        this.unsubscribe();
+    }
+    onCollectionUpdate = (querySnapshot) => {
+        const todos = [];
+        querySnapshot.forEach((doc) => {
+          const { title, complete } = doc.data();
+          
+          todos.push({
+            key: doc.id,
+            doc, // DocumentSnapshot
+            title,
+            complete,
+          });
+        });
+      
+        this.setState({ 
+          todos,
+          loading: false,
+       });
+      }
 
     render() {
         return (
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 style={styles.scrollView}>
-                <View>
-                    {/* <Image source={require('../images/emergency.png')} style={styles.image} /> */}
-                    
-                    <Text style={styles.detail}>  
-                    This is industrie's screen
-                </Text>
-                    
-
-                    <TouchableOpacity style={styles.button}
-                        onPress={() => this.props.navigation.navigate('Intro3')}>
-                        
-
-                        <Text style={styles.buttonText}>
-                            NEXT
-                    </Text>
-                    </TouchableOpacity>
-
-                   
-                </View>
+               {/* <FlatList
+          data={this.state.todos}
+          renderItem={({ item }) => <Load {...item} />}
+        /> */}
             </ScrollView>
         )
     }
