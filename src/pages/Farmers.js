@@ -6,36 +6,138 @@ import {
     Image,
     TouchableOpacity,
     ScrollView,
-    Dimensions
+    Dimensions,
+    FlatList
 } from 'react-native'
+import Load from './Load';
+import firebase from '@react-native-firebase/app';
+import firestore from '@react-native-firebase/firestore';
+import {Card} from "native-base";
+
 
 export default class Intro2 extends Component {
-
-    render() {
-        return (
-            <ScrollView
-                contentInsetAdjustmentBehavior="automatic"
-                style={styles.scrollView}>
-                <View>
-                    {/* <Image source={require('../images/emergency.png')} style={styles.image} /> */}
+    render(){
+        return(
+            <ScrollView style={{backgroundColor: '#C8E6C9',}}>
+                
+                <Card style={{width:390,height:200,marginLeft:10,marginTop:20,borderColor:"green"}}>
+                    <View flexDirection="row">
+                    <Image source={require("../assets/img/farmer1.jpg")} style={{width:210,height:170}}></Image>
+                    <View flexDirection="column">
+                    <Text style={{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 22,
+        fontWeight: '700',
+        marginLeft:20,
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30,
+        }}>Ram Bahadur</Text>
+                    <Text style= {{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 12,
+        fontWeight: '700',
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Shivasatakshi, Jhapa</Text>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('cropsinfo')}
+              style={{backgroundColor:'#388E3C',width:100,height:35,marginTop:10,marginLeft:35,borderRadius:12,justifyContent:"center"}}>
+                  <Text style={{
+                               // fontFamily: 'ProximaNova-Regular',
+                                fontSize: 14,
+                               // lineHeight: 20,
+                                fontWeight: '700',
+                                color: '#C8E6C9',
+                                marginLeft:10,
+                                marginTop:10,
+                               // marginLeft: 115,
+                                marginTop: 0,
+                                // justifyContent: 'center'
+                  }}>View details</Text></TouchableOpacity> 
+                    </View>
                     
-                    <Text style={styles.detail}>  
-                    This is farmer's screen
-                </Text>
+               
+                    </View>
+           
+                </Card>
+                <Card style={{width:390,height:200,marginLeft:10,marginTop:20,borderColor:"green"}}>
+                    <View flexDirection="row">
+                    <Image source={require("../assets/img/farmer3.jpg")} style={{width:210,height:170}}></Image>
+                    <View flexDirection="column">
+                    <Text style={{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 20,
+        fontWeight: '700',
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Hari Sharma</Text>
+                    <Text style= {{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 12,
+        fontWeight: '700',
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Sunsari</Text>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('cropsinfo')}
+              style={{backgroundColor:'#388E3C',width:100,height:35,marginTop:10,marginLeft:35,borderRadius:12,justifyContent:"center"}}>
+                  <Text style={{
+                               // fontFamily: 'ProximaNova-Regular',
+                                fontSize: 14,
+                               // lineHeight: 20,
+                                fontWeight: '700',
+                                color: '#C8E6C9',
+                                marginLeft:10,
+                                marginTop:10,
+                               // marginLeft: 115,
+                                marginTop: 0,
+                                // justifyContent: 'center'
+                  }}>View details</Text></TouchableOpacity> 
+                    </View>
                     
-
-                    <TouchableOpacity style={styles.button}
-                        onPress={() => this.props.navigation.navigate('Intro3')}>
-                        
-
-                        <Text style={styles.buttonText}>
-                            NEXT
-                    </Text>
-                    </TouchableOpacity>
-
-                   
-                </View>
+               
+                    </View>
+           
+                </Card>
+                <Card style={{width:390,height:200,marginLeft:10,marginTop:20,borderColor:"green"}}>
+                    <View flexDirection="row">
+                    <Image source={require("../assets/img/farmer2.jpg")} style={{width:210,height:150,marginTop:25}}></Image>
+                    <View flexDirection="column">
+                    <Text style={{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 20,
+        fontWeight: '700',
+        marginRight:20,
+        width:200,
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Sunil Tripathi</Text>
+                    <Text style= {{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 12,
+        fontWeight: '700',
+        width:200,
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}> Dolakha</Text>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('cropsinfo')}
+              style={{backgroundColor:'#388E3C',width:100,height:35,marginTop:10,marginLeft:35,borderRadius:12,justifyContent:"center"}}>
+                  <Text style={{
+                               // fontFamily: 'ProximaNova-Regular',
+                                fontSize: 14,
+                               // lineHeight: 20,
+                                fontWeight: '700',
+                                color: '#C8E6C9',
+                                marginLeft:10,
+                                marginTop:10,
+                               // marginLeft: 115,
+                                marginTop: 0,
+                                // justifyContent: 'center'
+                  }}>View details</Text></TouchableOpacity> 
+                    </View>
+                    
+               
+                    </View>
+           
+                </Card>
+            
+            
+            
             </ScrollView>
+  
         )
     }
 }
@@ -44,7 +146,7 @@ let ScreenHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     scrollView: {
-   // backgroundColor: '#00B0F2',
+    
     height: ScreenHeight,
   },
     image: {

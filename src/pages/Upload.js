@@ -26,17 +26,17 @@ class Todos extends React.Component {
           </TouchableOpacity>
           </View>
           <View flexDirection="row">
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('wheatinfo')}>
           <Image style={{marginTop:5,marginLeft:5, width:200,height:200}}source={ require('../assets/img/wheat.jpg')} ></Image>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('corninfo')}>
             
           <Image style={{marginTop:5,marginLeft:4, width:200,height:200}} source={require('../assets/img/corn.jpg')} ></Image>
           </TouchableOpacity>
          
           </View>
           <View flexDirection="row">
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('sunflowerinfo')}>
           <Image style={{marginTop:5,marginLeft:5, width:200,height:200}}source={ require('../assets/img/sunflower.jpg')} ></Image>
           </TouchableOpacity>
           

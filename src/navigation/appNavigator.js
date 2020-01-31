@@ -12,10 +12,17 @@ import {
   import Login from "../pages/LoginFarmers.js"
   import bottomTabNavigator from './bottomNavigator'
   import cropinfo from "../pages/cropinfo.js"
+  import cropsinfo from "../pages/cropsinfo.js"
   import juteinfo from "../pages/juteinfo.js"
+  import corninfo from "../pages/corninfo.js"
+  import wheatinfo from "../pages/wheatinfo.js"
+  import sunflowerinfo from "../pages/sunflowerinfo.js"
+  import annapurnadetails from "../pages/annapurnadetails.js"
+  import omdetails from "../pages/omdetails.js"
+  import gharanadetails from "../pages/gharanadetails.js"
   import topTabNavigator from './topNavigator'
   import topTabNavigator2 from './topNavigator2'
-  import { createStackNavigator } from 'react-navigation-stack';
+  import { createStackNavigator } from 'react-navigation-stack';  
   import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
   import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
   
@@ -103,6 +110,13 @@ import {
     Intro3:{screen:Intro3},
     cropinfo:{screen:cropinfo},
     juteinfo:{screen:juteinfo},
+    wheatinfo:{screen:wheatinfo},
+    cropsinfo:{screen:cropsinfo},
+     annapurnadetails:{screen:annapurnadetails},
+    omdetails:{screen:omdetails},
+    gharanadetails:{screen:gharanadetails},
+    corninfo:{screen:corninfo},
+    sunflowerinfo:{screen:sunflowerinfo},
     Register:{screen:Register},
     Login:{screen:Login},
     Dashboard:{screen:DashboardStackNavigator},

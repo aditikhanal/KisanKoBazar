@@ -12,76 +12,130 @@ import {
 import Load from './Load';
 import firebase from '@react-native-firebase/app';
 import firestore from '@react-native-firebase/firestore';
+import {Card} from "native-base";
 
 
 export default class Intro2 extends Component {
-    updateTextInput(value) {
-        this.setState({ textInput: value });
-    }
-    addTodo() {
-        this.ref.add({
-          title: this.state.textInput,
-          
-          complete: false,
-        });
-      
-        this.setState({
-          textInput: '',
-          
-        });
-      }
-      state = {
-        textInput: '',
-        
-    };
-    
-    constructor() {
-        super();
-        this.ref = firebase.firestore().collection('todos');
-        this.unsubscribe = null;
-    
-        this.state = {
-            textInput: '',
-            loading: true,
-            todos: [],
-        };
-    }
-    componentDidMount() {
-        this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate) 
-    }
-    
-    componentWillUnmount() {
-        this.unsubscribe();
-    }
-    onCollectionUpdate = (querySnapshot) => {
-        const todos = [];
-        querySnapshot.forEach((doc) => {
-          const { title, complete } = doc.data();
-          
-          todos.push({
-            key: doc.id,
-            doc, // DocumentSnapshot
-            title,
-            complete,
-          });
-        });
-      
-        this.setState({ 
-          todos,
-          loading: false,
-       });
-      }
-
-    render() {
-        return (
-            <ScrollView
-                contentInsetAdjustmentBehavior="automatic"
-                style={styles.scrollView}>
-               {/* <FlatList
-          data={this.state.todos}
-          renderItem={({ item }) => <Load {...item} />}
-        /> */}
+    render(){
+        return(
+            <ScrollView style={{backgroundColor: '#C8E6C9',}}>
+                
+                <Card style={{width:390,height:200,marginLeft:10,marginTop:20,borderColor:"green"}}>
+                    <View flexDirection="row">
+                    <Image source={require("../assets/img/annapurna.jpg")} style={{width:210,height:170}}></Image>
+                    <View flexDirection="column">
+                    <Text style={{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 22,
+        fontWeight: '700',
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Annapurna Foods</Text>
+                    <Text style= {{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 12,
+        fontWeight: '700',
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Lahan-3 Siraha Nepal</Text>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('annapurnadetails')}
+              style={{backgroundColor:'#388E3C',width:100,height:35,marginTop:10,marginLeft:35,borderRadius:12,justifyContent:"center"}}>
+                  <Text style={{
+                               // fontFamily: 'ProximaNova-Regular',
+                                fontSize: 14,
+                               // lineHeight: 20,
+                                fontWeight: '700',
+                                color: '#C8E6C9',
+                                marginLeft:10,
+                                marginTop:10,
+                               // marginLeft: 115,
+                                marginTop: 0,
+                                // justifyContent: 'center'
+                  }}>View details</Text></TouchableOpacity> 
+                    </View>
+                    
+               
+                    </View>
+           
+                </Card>
+                <Card style={{width:390,height:200,marginLeft:10,marginTop:20,borderColor:"green"}}>
+                    <View flexDirection="row">
+                    <Image source={require("../assets/img/om.jpg")} style={{width:210,height:170}}></Image>
+                    <View flexDirection="column">
+                    <Text style={{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 20,
+        fontWeight: '700',
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Om Khadya Udyog</Text>
+                    <Text style= {{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 12,
+        fontWeight: '700',
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Padam Road,Alau-7,Birgunj</Text>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('omdetails')}
+              style={{backgroundColor:'#388E3C',width:100,height:35,marginTop:10,marginLeft:35,borderRadius:12,justifyContent:"center"}}>
+                  <Text style={{
+                               // fontFamily: 'ProximaNova-Regular',
+                                fontSize: 14,
+                               // lineHeight: 20,
+                                fontWeight: '700',
+                                color: '#C8E6C9',
+                                marginLeft:10,
+                                marginTop:10,
+                               // marginLeft: 115,
+                                marginTop: 0,
+                                // justifyContent: 'center'
+                  }}>View details</Text></TouchableOpacity> 
+                    </View>
+                    
+               
+                    </View>
+           
+                </Card>
+                <Card style={{width:390,height:200,marginLeft:10,marginTop:20,borderColor:"green"}}>
+                    <View flexDirection="row">
+                    <Image source={require("../assets/img/gharana.jpg")} style={{width:210,height:150,marginTop:25}}></Image>
+                    <View flexDirection="column">
+                    <Text style={{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 20,
+        fontWeight: '700',
+        marginRight:20,
+        width:200,
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Gharana Foods Pvt. Ltd.</Text>
+                    <Text style= {{alignSelf: 'center',
+        color: '#434343',
+        fontSize: 12,
+        fontWeight: '700',
+        width:200,
+        fontFamily: 'ProximaNova-Regular',
+        marginTop:30}}>Mayadevi-8, SiddharthaNagar</Text>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('gharanadetails')}
+              style={{backgroundColor:'#388E3C',width:100,height:35,marginTop:10,marginLeft:35,borderRadius:12,justifyContent:"center"}}>
+                  <Text style={{
+                               // fontFamily: 'ProximaNova-Regular',
+                                fontSize: 14,
+                               // lineHeight: 20,
+                                fontWeight: '700',
+                                color: '#C8E6C9',
+                                marginLeft:10,
+                                marginTop:10,
+                               // marginLeft: 115,
+                                marginTop: 0,
+                                // justifyContent: 'center'
+                  }}>View details</Text></TouchableOpacity> 
+                    </View>
+                    
+               
+                    </View>
+           
+                </Card>
+            
+            
+            
             </ScrollView>
+  
         )
     }
 }
@@ -90,7 +144,7 @@ let ScreenHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     scrollView: {
-   // backgroundColor: '#00B0F2',
+    
     height: ScreenHeight,
   },
     image: {
